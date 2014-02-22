@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="./tests/bootstrap.php"
+        >
+    <php>
+        <const name="AUTOLOAD_PATH" value="./src/Tools/SplAutoloader.php"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Payment machine" bootstrap="/path/to/bootstrap.php">
+            <directory suffix="Test.php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+
+</phpunit>
