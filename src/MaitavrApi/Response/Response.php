@@ -1,5 +1,6 @@
 <?php
 namespace snicksnk\MaitavrApi\Response;
+use snicksnk\MaitavrApi\Exceptions\ApiException;
 use snicksnk\MaitavrApi\Response\ResponseInterface;
 use snicksnk\MaitavrApi\Response\Exceptions\AuthException;
 
@@ -12,6 +13,8 @@ class Response implements ResponseInterface {
         if (isset($response['error']) && $response['error'] === 'true'){
             if ($response['errorText'] === 'access denied'){
                 throw new AuthException("Your auth data is wrong");
+            } else {
+                throw new ApiException($response['errorText']);
             }
         }
 

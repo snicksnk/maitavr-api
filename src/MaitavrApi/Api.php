@@ -1,29 +1,32 @@
 <?php
 namespace snicksnk\MaitavrApi;
+use snicksnk\MaitavrApi\Response\Response;
 use snicksnk\MaitavrApi\Transport\TransportInterface;
 use snicksnk\MaitavrApi\Transport\Curl;
-use snicksnk\MaitavrApi\Rows\RowsSet;
+use snicksnk\MaitavrApi\Request\UsersList;
+use snicksnk\MaitavrApi\Request\RequestInterface;
 /**
  * Class Api
  * @package snicksnk\MaitavrApi
  */
 class Api {
     /**
-     * @var string
+     * @var string Логин
      */
     protected $login;
     /**
-     * @var string
+     * @var string Secret Key
      */
     protected $secretKey;
     /**
-     * @var TransportInterface
+     * @var TransportInterface Объект-транспорт для доставки запросов на сервер maitavr.org
      */
     protected $transport;
 
     /**
-     * @param string $login
-     * @param string $secretKey
+     * Создать инстанс класса API
+     * @param string $login Логин
+     * @param string $secretKey Secret key
      */
     public function __construct($login=null, $secretKey=null){
         if ($login !== null && $secretKey !== null){
@@ -33,8 +36,9 @@ class Api {
     }
 
     /**
-    * @param string $login
-    * @param string $secretKey
+    * Указать данные для аутефикации
+    * @param string $login Логин
+    * @param string $secretKey Пароль
     */
     public function setAuthData($login, $secretKey){
         //TODO wrong authDataException
@@ -43,20 +47,47 @@ class Api {
     }
 
     /**
-     * @param TransportInterface $transport
+     * Указать транспорт для доставки запроса на сервер
+     * @param TransportInterface $transport Класс-транспорт
      */
     public function setTransport(TransportInterface $transport){
         $this->transport = $transport;
     }
 
-    public function request(RowsSet $rowsSet=null){
-        $request = array('login'=>$this->login,'secretKey'=>$this->secretKey);
-        if ($rowsSet !== null){
-           $request['rows'] = $rowsSet->getRows();
+    /**
+     * Сделать запрос
+     * @param RequestInterface $request
+     * @return Response
+     */
+    public function requestAndGetObject(RequestInterface $request=null){
+        $requestData = array('login'=>$this->login,'secretKey'=>$this->secretKey);
+
+        if ($request !== null){
+            $requestData['rows'] = $request->getRows();
+            //TODO Вынести обработку фильтров в отдельный класс
+            if ($filters = $request->getFilters()){
+                foreach ($filters as $filterName=>$filterValue){
+                    if ($filterName=='emails'){
+                        $requestData['emails'] = $filterValue;
+                    }
+                }
+            }
         }
 
-        $requestJson = json_encode($request);
-        return $this->transport->performRequest($requestJson);
+        $requestJSON = json_encode($requestData);
+        $responseJSON = $this->transport->performRequest($requestJSON);
+        $response = new Response();
+        $response->setJSONResponse($responseJSON);
+        return $response;
+    }
+
+    /**
+     * Сделать запрос и получить ответ в виде массива
+     * @param RequestInterface $request Инстанс класса-запроса
+     * @return array Ответ от сервера
+     */
+    public function request(RequestInterface $request=null){
+        return $this->requestAndGetObject($request)->toArray();
     }
 
 }
