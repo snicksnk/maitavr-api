@@ -28,4 +28,4 @@ class Autoloader{
     }
 }
 
-spl_autoload_register(new Autoloader());
+return new Autoloader();

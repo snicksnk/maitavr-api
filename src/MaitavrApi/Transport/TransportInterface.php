@@ -7,8 +7,9 @@ namespace snicksnk\MaitavrApi\Transport;
  */
 interface TransportInterface {
     /**
-     * @param $requestData
+     * @param string $requestUrl URL запроса
+     * @param string $requestData JSON-содержимое запроса
      * @return mixed
      */
-    public function performRequest($requestData);
+    public function performRequest($requestUrl, $requestData);
 }

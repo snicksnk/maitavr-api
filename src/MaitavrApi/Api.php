@@ -1,10 +1,12 @@
 <?php
 namespace snicksnk\MaitavrApi;
+use snicksnk\MaitavrApi\Request\RequestWithFilterInterface;
 use snicksnk\MaitavrApi\Response\Response;
 use snicksnk\MaitavrApi\Transport\TransportInterface;
-use snicksnk\MaitavrApi\Transport\Curl;
-use snicksnk\MaitavrApi\Request\UsersList;
+use snicksnk\MaitavrApi\Transport\StreamContext;
 use snicksnk\MaitavrApi\Request\RequestInterface;
+use snicksnk\MaitavrApi\Request\RequestWithResponseRowsInterface;
+
 /**
  * Class Api
  * @package snicksnk\MaitavrApi
@@ -24,6 +26,11 @@ class Api {
     protected $transport;
 
     /**
+     * URL запросов
+     */
+    const API_URL = 'https://maitavr.org/subsystem/partners/api/';
+
+    /**
      * Создать инстанс класса API
      * @param string $login Логин
      * @param string $secretKey Secret key
@@ -32,7 +39,7 @@ class Api {
         if ($login !== null && $secretKey !== null){
             $this->setAuthData($login, $secretKey);
         }
-        $this->transport = new Curl();
+        $this->setTransport(new StreamContext());
     }
 
     /**
@@ -59,11 +66,17 @@ class Api {
      * @param RequestInterface $request
      * @return Response
      */
-    public function requestAndGetObject(RequestInterface $request=null){
+    public function requestAndGetObject(RequestInterface $request){
         $requestData = array('login'=>$this->login,'secretKey'=>$this->secretKey);
 
-        if ($request !== null){
-            $requestData['rows'] = $request->getRows();
+        if ($request instanceof RequestWithResponseRowsInterface){
+            $requestRows = $request->getRows();
+            if (count($requestRows)>0){
+                $requestData['rows'] = $requestRows;
+            }
+        }
+
+        if ($request instanceof RequestWithFilterInterface){
             //TODO Вынести обработку фильтров в отдельный класс
             if ($filters = $request->getFilters()){
                 foreach ($filters as $filterName=>$filterValue){
@@ -75,7 +88,9 @@ class Api {
         }
 
         $requestJSON = json_encode($requestData);
-        $responseJSON = $this->transport->performRequest($requestJSON);
+        $requestURL = self::API_URL.$request->getRequestRelativeURL();
+        $responseJSON = $this->transport->performRequest($requestURL, $requestJSON);
+
         $response = new Response();
         $response->setJSONResponse($responseJSON);
         return $response;
@@ -86,7 +101,7 @@ class Api {
      * @param RequestInterface $request Инстанс класса-запроса
      * @return array Ответ от сервера
      */
-    public function request(RequestInterface $request=null){
+    public function request(RequestInterface $request){
         return $this->requestAndGetObject($request)->toArray();
     }
 
