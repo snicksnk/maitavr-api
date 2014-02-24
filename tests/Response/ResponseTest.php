@@ -1,8 +1,8 @@
 <?php
 namespace tests\Response;
-use Snicksnk\MaitavrApi\Response\Response;
-use Snicksnk\MaitavrApi\Response\Exceptions\AuthException;
-use Snicksnk\MaitavrApi\Exceptions\ApiException;
+use MaitavrApi\Response\Response;
+use MaitavrApi\Response\Exceptions\AuthException;
+use MaitavrApi\Exceptions\ApiException;
 
 class ResponseTest extends \PHPUnit_Framework_TestCase {
 

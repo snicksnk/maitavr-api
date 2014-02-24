@@ -1,8 +1,8 @@
 <?php
-namespace Snicksnk\MaitavrApi\Response;
-use Snicksnk\MaitavrApi\Exceptions\ApiException;
-use Snicksnk\MaitavrApi\Response\ResponseInterface;
-use Snicksnk\MaitavrApi\Response\Exceptions\AuthException;
+namespace MaitavrApi\Response;
+use MaitavrApi\Exceptions\ApiException;
+use MaitavrApi\Response\ResponseInterface;
+use MaitavrApi\Response\Exceptions\AuthException;
 
 class Response implements ResponseInterface {
 

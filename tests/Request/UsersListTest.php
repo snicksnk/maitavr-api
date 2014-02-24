@@ -1,6 +1,6 @@
 <?php
 namespace tests\Request;
-use Snicksnk\MaitavrApi\Request\Users\UList;
+use MaitavrApi\Request\Users\UList;
 class UsersListTest extends \PHPUnit_Framework_TestCase {
 
     public function testRowsSet(){

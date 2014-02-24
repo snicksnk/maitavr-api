@@ -1,5 +1,5 @@
 <?php
-namespace Snicksnk\MaitavrApi\Request;
+namespace MaitavrApi\Request;
 
 interface RequestInterface {
     /**

@@ -1,10 +1,10 @@
 <?php
-namespace Snicksnk\MaitavrApi\Request\Users;
-use Snicksnk\MaitavrApi\Request\RequestInterface;
+namespace MaitavrApi\Request\Users;
+use MaitavrApi\Request\RequestInterface;
 /**
  * Получить количество пользователей на сайте, привязанных к партнеру
  * Class Count
- * @package Snicksnk\MaitavrApi\Request\Users
+ * @package MaitavrApi\Request\Users
  */
 class Count implements RequestInterface {
     /**

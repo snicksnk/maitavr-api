@@ -1,13 +1,13 @@
 <?php
-namespace Snicksnk\MaitavrApi\Request\Users;
-use Snicksnk\MaitavrApi\Request\RequestInterface;
-use Snicksnk\MaitavrApi\Request\RequestWithResponseRowsInterface;
-use Snicksnk\MaitavrApi\Request\RequestWithFilterInterface;
+namespace MaitavrApi\Request\Users;
+use MaitavrApi\Request\RequestInterface;
+use MaitavrApi\Request\RequestWithResponseRowsInterface;
+use MaitavrApi\Request\RequestWithFilterInterface;
 
 /**
  * Запрос списка пользователей
  * Class UList
- * @package Snicksnk\MaitavrApi\Request
+ * @package MaitavrApi\Request
  */
 class UList implements  RequestInterface, RequestWithResponseRowsInterface, RequestWithFilterInterface {
     /**

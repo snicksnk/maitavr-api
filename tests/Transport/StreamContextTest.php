@@ -1,7 +1,7 @@
 <?php
 namespace tests\Transport;
-use Snicksnk\MaitavrApi\Transport\StreamContext;
-use Snicksnk\MaitavrApi\Transport\Exceptions\TransportLevelException;
+use MaitavrApi\Transport\StreamContext;
+use MaitavrApi\Transport\Exceptions\TransportLevelException;
 
 class StreamContextTest extends \PHPUnit_Framework_TestCase {
     public function testTransportEcxeption(){

@@ -1,6 +1,6 @@
 <?php
 namespace tests\Request;
-use Snicksnk\MaitavrApi\Request\Users\Count;
+use MaitavrApi\Request\Users\Count;
 
 class UsersCountTest extends \PHPUnit_Framework_TestCase {
     public function testGetRelativeUrl(){

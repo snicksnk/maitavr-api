@@ -3,7 +3,7 @@ namespace Snicksnk\Tools;
 
 class Autoloader{
 
-    const NSPACE = 'Snicksnk\MaitavrApi';
+    const NSPACE = 'MaitavrApi';
     const RELATIVE_FILE_PATH_PREFIX = '/../MaitavrApi/';
 
     function __invoke($className)

@@ -1,10 +1,10 @@
 <?php
 namespace tests;
-use Snicksnk\MaitavrApi\Api;
-use Snicksnk\MaitavrApi\Transport\TransportInterface;
-use Snicksnk\MaitavrApi\Response\ResponseInterface;
-use Snicksnk\MaitavrApi\Request\Users\UList;
-use Snicksnk\MaitavrApi\Request\Users\Count;
+use MaitavrApi\Api;
+use MaitavrApi\Transport\TransportInterface;
+use MaitavrApi\Response\ResponseInterface;
+use MaitavrApi\Request\Users\UList;
+use MaitavrApi\Request\Users\Count;
 
 class ApiTest extends \PHPUnit_Framework_TestCase {
 
@@ -14,7 +14,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
 
     public function testRequestWithoutAuthData(){
         $requestData = json_encode(array('login'=>'login','secretKey'=>'key'));
-        $transportMock = $this->getMockBuilder('Snicksnk\MaitavrApi\Transport\TransportInterface')
+        $transportMock = $this->getMockBuilder('MaitavrApi\Transport\TransportInterface')
             ->setMethods(array('performRequest'))
             ->getMock();
         $transportMock->expects($this->once())->method('performRequest')
@@ -52,7 +52,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
             "country": "Россия"
         }]',true);
 
-        $transportMock = $this->getMockBuilder('Snicksnk\MaitavrApi\Transport\TransportInterface')
+        $transportMock = $this->getMockBuilder('MaitavrApi\Transport\TransportInterface')
             ->setMethods(array('performRequest'))
             ->getMock();
         $transportMock->expects($this->once())
@@ -99,7 +99,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
             "country": "Россия"
         }]',true);
 
-        $transportMock = $this->getMockBuilder('Snicksnk\MaitavrApi\Transport\TransportInterface')
+        $transportMock = $this->getMockBuilder('MaitavrApi\Transport\TransportInterface')
             ->setMethods(array('performRequest'))
             ->getMock();
         $transportMock->expects($this->once())

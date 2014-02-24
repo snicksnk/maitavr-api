@@ -1,9 +1,9 @@
 <?php
-namespace Snicksnk\MaitavrApi\Exceptions;
+namespace MaitavrApi\Exceptions;
 /**
  * Базовый класс всех исключений
  * Class ApiException
- * @package Snicksnk\MaitavrApi\Exceptions
+ * @package MaitavrApi\Exceptions
  */
 class ApiException extends \Exception {
 

@@ -1,10 +1,10 @@
 <?php
-namespace Snicksnk\MaitavrApi\Request;
+namespace MaitavrApi\Request;
 
 /**
  * Запрос, указывающий необходимые в ответе поля
  * Interface RequestWithResponseRows
- * @package Snicksnk\MaitavrApi\Request
+ * @package MaitavrApi\Request
  */
 interface RequestWithResponseRows {
 
