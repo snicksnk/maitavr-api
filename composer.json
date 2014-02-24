@@ -1,0 +1,18 @@
+{
+    "name": "snicksnk/maitavr-api",
+    "description": "Api for maitavr.org",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "maitavr.org"
+    ],
+    "homepage": "https://github.com/snicksnk/maitavr-api",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "snicksnk\\MaitavrApi": "/snicksnk/maitavr-api/src/MaitavrApi/"
+        },
+        "files": ["vendor/snicksnk/maitavr-lib/src/Tools/CompleteAutoloader.php"]
+    }
+}

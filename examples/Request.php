@@ -4,7 +4,8 @@ use snicksnk\MaitavrApi\Request\Users\Count;
 use snicksnk\MaitavrApi\Request\Users\UList;
 
 //Подключаем автолоадер, если не используется composer
-spl_autoload_register(require_once (__DIR__.'/../src/Tools/SplAutoloader.php'));
+//spl_autoload_register(require_once (__DIR__.'/../src/Tools/SplAutoloader.php'));
+require_once (__DIR__.'/../src/Tools/CompleteAutoloader.php');
 
 //Создаем инстанс API класса
 $api = new Api('testapi', 'test12345678');
