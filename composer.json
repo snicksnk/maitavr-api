@@ -3,7 +3,7 @@
     "description": "Api for maitavr.org",
     "license": "BSD-3-Clause",
     "keywords": [
-        "maitavr.org", "api"
+        "maitavr.org", "api", "maitavr"
     ],
     "homepage": "https://github.com/snicksnk/maitavr-api",
     "require": {
