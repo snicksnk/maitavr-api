@@ -1,7 +1,7 @@
 <?php
-use snicksnk\MaitavrApi\Api;
-use snicksnk\MaitavrApi\Request\Users\Count;
-use snicksnk\MaitavrApi\Request\Users\UList;
+use MaitavrApi\Api;
+use MaitavrApi\Request\Users\Count;
+use MaitavrApi\Request\Users\UList;
 
 //Подключаем автолоадер, если не используется composer
 //spl_autoload_register(require_once (__DIR__.'/../src/Tools/SplAutoloader.php'));
