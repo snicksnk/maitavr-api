@@ -1,7 +1,7 @@
 <?php
-namespace snicksnk\MaitavrApi\Transport;
-use snicksnk\MaitavrApi\Transport\TransportInterface;
-use snicksnk\MaitavrApi\Transport\Exceptions\TransportLevelException;
+namespace Snicksnk\MaitavrApi\Transport;
+use Snicksnk\MaitavrApi\Transport\TransportInterface;
+use Snicksnk\MaitavrApi\Transport\Exceptions\TransportLevelException;
 
 class Curl implements TransportInterface {
     private $SSLVerifypeer = true;

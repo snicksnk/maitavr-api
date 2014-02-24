@@ -1,9 +1,9 @@
 <?php
-namespace snicksnk\MaitavrApi\Transport;
+namespace Snicksnk\MaitavrApi\Transport;
 
 /**
  * Interface TransportInterface
- * @package snicksnk\MaitavrApi\Transport
+ * @package Snicksnk\MaitavrApi\Transport
  */
 interface TransportInterface {
     /**

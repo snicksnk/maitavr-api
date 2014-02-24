@@ -1,15 +1,15 @@
 <?php
-namespace snicksnk\MaitavrApi;
-use snicksnk\MaitavrApi\Request\RequestWithFilterInterface;
-use snicksnk\MaitavrApi\Response\Response;
-use snicksnk\MaitavrApi\Transport\TransportInterface;
-use snicksnk\MaitavrApi\Transport\StreamContext;
-use snicksnk\MaitavrApi\Request\RequestInterface;
-use snicksnk\MaitavrApi\Request\RequestWithResponseRowsInterface;
+namespace Snicksnk\MaitavrApi;
+use Snicksnk\MaitavrApi\Request\RequestWithFilterInterface;
+use Snicksnk\MaitavrApi\Response\Response;
+use Snicksnk\MaitavrApi\Transport\TransportInterface;
+use Snicksnk\MaitavrApi\Transport\StreamContext;
+use Snicksnk\MaitavrApi\Request\RequestInterface;
+use Snicksnk\MaitavrApi\Request\RequestWithResponseRowsInterface;
 
 /**
  * Class Api
- * @package snicksnk\MaitavrApi
+ * @package Snicksnk\MaitavrApi
  */
 class Api {
     /**

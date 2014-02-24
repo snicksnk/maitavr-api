@@ -1,10 +1,10 @@
 <?php
 namespace tests;
-use snicksnk\MaitavrApi\Api;
-use snicksnk\MaitavrApi\Transport\TransportInterface;
-use snicksnk\MaitavrApi\Response\ResponseInterface;
-use snicksnk\MaitavrApi\Request\Users\UList;
-use snicksnk\MaitavrApi\Request\Users\Count;
+use Snicksnk\MaitavrApi\Api;
+use Snicksnk\MaitavrApi\Transport\TransportInterface;
+use Snicksnk\MaitavrApi\Response\ResponseInterface;
+use Snicksnk\MaitavrApi\Request\Users\UList;
+use Snicksnk\MaitavrApi\Request\Users\Count;
 
 class ApiTest extends \PHPUnit_Framework_TestCase {
 
@@ -14,7 +14,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
 
     public function testRequestWithoutAuthData(){
         $requestData = json_encode(array('login'=>'login','secretKey'=>'key'));
-        $transportMock = $this->getMockBuilder('snicksnk\MaitavrApi\Transport\TransportInterface')
+        $transportMock = $this->getMockBuilder('Snicksnk\MaitavrApi\Transport\TransportInterface')
             ->setMethods(array('performRequest'))
             ->getMock();
         $transportMock->expects($this->once())->method('performRequest')
@@ -52,7 +52,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
             "country": "Россия"
         }]',true);
 
-        $transportMock = $this->getMockBuilder('snicksnk\MaitavrApi\Transport\TransportInterface')
+        $transportMock = $this->getMockBuilder('Snicksnk\MaitavrApi\Transport\TransportInterface')
             ->setMethods(array('performRequest'))
             ->getMock();
         $transportMock->expects($this->once())
@@ -81,7 +81,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
             "country"
         ],
         "emails": [
-            "snicksnk@gmail.com",
+            "Snicksnk@gmail.com",
             "somemail@gmail.com"
         ]
         }',true);
@@ -99,7 +99,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
             "country": "Россия"
         }]',true);
 
-        $transportMock = $this->getMockBuilder('snicksnk\MaitavrApi\Transport\TransportInterface')
+        $transportMock = $this->getMockBuilder('Snicksnk\MaitavrApi\Transport\TransportInterface')
             ->setMethods(array('performRequest'))
             ->getMock();
         $transportMock->expects($this->once())
@@ -111,7 +111,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
         $api->setTransport($transportMock);
 
         $rowsSet = new UList(array(UList::ROW_FIRSTNAME, UList::ROW_LASTNAME, UList::ROW_BDAY, UList::ROW_COUNTRY));
-        $rowsSet->addFilter('emails',array("snicksnk@gmail.com", "somemail@gmail.com"));
+        $rowsSet->addFilter('emails',array("Snicksnk@gmail.com", "somemail@gmail.com"));
         $response = $api->request($rowsSet);
         $this->assertEquals($responseData, $response);
 

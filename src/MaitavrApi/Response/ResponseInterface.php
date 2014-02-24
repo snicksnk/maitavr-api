@@ -1,8 +1,8 @@
 <?php
-namespace snicksnk\MaitavrApi\Response;
+namespace Snicksnk\MaitavrApi\Response;
 /**
  * Interface ResponseInterface
- * @package snicksnk\MaitavrApi\Response
+ * @package Snicksnk\MaitavrApi\Response
  */
 interface ResponseInterface {
     /**

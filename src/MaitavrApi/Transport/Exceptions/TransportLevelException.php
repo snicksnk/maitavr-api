@@ -1,5 +1,5 @@
 <?php
-namespace snicksnk\MaitavrApi\Transport\Exceptions;
+namespace Snicksnk\MaitavrApi\Transport\Exceptions;
 
 class TransportLevelException extends \Exception {
 } 

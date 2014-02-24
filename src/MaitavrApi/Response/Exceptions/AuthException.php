@@ -1,5 +1,5 @@
 <?php
-namespace snicksnk\MaitavrApi\Response\Exceptions;
-use snicksnk\MaitavrApi\Exceptions\ApiException;
+namespace Snicksnk\MaitavrApi\Response\Exceptions;
+use Snicksnk\MaitavrApi\Exceptions\ApiException;
 class AuthException extends ApiException {
 }

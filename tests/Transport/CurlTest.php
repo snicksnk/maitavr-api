@@ -1,7 +1,7 @@
 <?php
 namespace tests\Transport;
-use snicksnk\MaitavrApi\Transport\Curl;
-use snicksnk\MaitavrApi\Transport\Exceptions\TransportLevelException;
+use Snicksnk\MaitavrApi\Transport\Curl;
+use Snicksnk\MaitavrApi\Transport\Exceptions\TransportLevelException;
 class CurlTest extends \PHPUnit_Framework_TestCase {
 
     public function testSetOptSsl(){

@@ -13,6 +13,7 @@
         "psr-0": {
             "snicksnk\\MaitavrApi": "/snicksnk/maitavr-api/src/MaitavrApi/"
         },
-        "files": ["src/Tools/CompleteAutoloader.php"]
+        "psr-4": {"Snicksnk\\MaitavrApi": "src/MaitavrApi"},
+        "filesaaa": ["src/Tools/CompleteAutoloader.php"]
     }
 }

@@ -1,10 +1,10 @@
 <?php
-namespace snicksnk\MaitavrApi\Request;
-use snicksnk\MaitavrApi\Request\RequestInterface;
+namespace Snicksnk\MaitavrApi\Request;
+use Snicksnk\MaitavrApi\Request\RequestInterface;
 /**
  * Запрос с фильтром
  * Interface RequestWithFilterInterface
- * @package snicksnk\MaitavrApi\Request
+ * @package Snicksnk\MaitavrApi\Request
  */
 interface RequestWithFilterInterface extends RequestInterface {
     /**

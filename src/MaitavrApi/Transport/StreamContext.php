@@ -1,10 +1,10 @@
 <?php
-namespace snicksnk\MaitavrApi\Transport;
-use snicksnk\MaitavrApi\Transport\Exceptions\TransportLevelException;
+namespace Snicksnk\MaitavrApi\Transport;
+use Snicksnk\MaitavrApi\Transport\Exceptions\TransportLevelException;
 /**
  * Отправка запроса с использованием Stream Context
  * Class StreamContext
- * @package snicksnk\MaitavrApi\Transport
+ * @package Snicksnk\MaitavrApi\Transport
  */
 class StreamContext implements TransportInterface {
     /**

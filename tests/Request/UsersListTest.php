@@ -1,6 +1,6 @@
 <?php
 namespace tests\Request;
-use snicksnk\MaitavrApi\Request\Users\UList;
+use Snicksnk\MaitavrApi\Request\Users\UList;
 class UsersListTest extends \PHPUnit_Framework_TestCase {
 
     public function testRowsSet(){
@@ -20,7 +20,7 @@ class UsersListTest extends \PHPUnit_Framework_TestCase {
 
     public function testFilter(){
         $usersRequest = new UList();
-        $filterValue = array('snicksnk@gmail.com, "some@mail.ru');
+        $filterValue = array('Snicksnk@gmail.com, "some@mail.ru');
         $usersRequest->addFilter(UList::ROW_EMAIL, $filterValue);
         $this->assertEquals(array(UList::ROW_EMAIL => $filterValue), $usersRequest->getFilters());
     }
