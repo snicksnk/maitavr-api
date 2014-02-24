@@ -10,6 +10,6 @@
         "php": ">=5.3.3"
     },
     "autoload": {
-        "files": ["src/Tools/CompleteAutoloader.php"]
+        "psr-0": {"Snicksnk\\MaitavrApi": "src/"}
     }
 }
