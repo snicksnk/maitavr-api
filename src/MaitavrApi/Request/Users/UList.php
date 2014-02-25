@@ -71,6 +71,12 @@ class UList implements  RequestInterface, RequestWithResponseRowsInterface, Requ
      */
     const ROW_MAITAVRPROFILE = "maitavrProfile";
 
+    /**
+     * Фильтрация по e-mail адресу
+     */
+    const FILTER_EMAIL = 'emails';
+
+
     protected $rows = array();
     protected $filters = array();
 

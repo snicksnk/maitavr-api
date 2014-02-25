@@ -1,6 +1,7 @@
 <?php
 namespace tests;
 use MaitavrApi\Api;
+use MaitavrApi\Transport\Curl;
 use MaitavrApi\Transport\TransportInterface;
 use MaitavrApi\Response\ResponseInterface;
 use MaitavrApi\Request\Users\UList;
@@ -111,7 +112,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
         $api->setTransport($transportMock);
 
         $rowsSet = new UList(array(UList::ROW_FIRSTNAME, UList::ROW_LASTNAME, UList::ROW_BDAY, UList::ROW_COUNTRY));
-        $rowsSet->addFilter('emails',array("Snicksnk@gmail.com", "somemail@gmail.com"));
+        $rowsSet->addFilter(UList::FILTER_EMAIL, array("Snicksnk@gmail.com", "somemail@gmail.com"));
         $response = $api->request($rowsSet);
         $this->assertEquals($responseData, $response);
 
@@ -122,6 +123,16 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
         $response = $api->requestAndGetObject(new UList());
         $this->assertTrue(is_array($response->toArray()));
     }
+
+    public function testRealRequestWitchCurl(){
+        $api = new Api('testapi', 'test12345678');
+        $curl = new Curl();
+        $curl->setCurlOptSSLVerifypeer(false);
+        $api->setTransport($curl);
+        $response = $api->requestAndGetObject(new UList());
+        $this->assertTrue(is_array($response->toArray()));
+    }
+
 
     public  function testRealRequestWithRowsSet(){
         $api = new Api('testapi', 'test12345678');

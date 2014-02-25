@@ -30,6 +30,7 @@ class Api {
      */
     const API_URL = 'https://maitavr.org/subsystem/partners/api/';
 
+
     /**
      * Создать инстанс класса API
      * @param string $login Логин
