@@ -73,5 +73,5 @@ array(2) {
 }
 */
 ```
-
+[Другие примеры](https://github.com/snicksnk/maitavr-api/blob/master/examples/Request.php)
 
