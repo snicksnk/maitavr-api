@@ -11,5 +11,10 @@
     },
     "autoload": {
         "psr-0": {"MaitavrApi": "src/"}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.1-dev"
+        }
     }
 }
