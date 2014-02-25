@@ -21,9 +21,9 @@ php composer.phar update
 
 * Базовый класс api 
 [MaitavrApi\Api](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Api.php)
+* Запрос списка пользователей [MaitavrApi\Request\Users\UList](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/UList.php)
 * Запрос количества пользоватлей 
 [MaitavrApi\Request\Users\Count](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/Count.php) 
-* Запрос списка пользователей [MaitavrApi\Request\Users\UList](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/UList.php)
 * Stream context transport [MaitavrApi\Transport\StreamContext](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Transport/StreamContext.php) - средство доставки запросов по умолчанию
 
 
