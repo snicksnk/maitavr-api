@@ -27,6 +27,29 @@ php composer.phar update
 * Stream context transport [MaitavrApi\Transport\StreamContext](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Transport/StreamContext.php) - средство доставки запросов по умолчанию
 
 
+Параметры, которые позволяют изменить поля, приходящие от сервера 
+------------
+
+Если не используется не один из этих параметров в ответ приходят все поля 
+
+
+* [Список полей, которые можно получить в ответе](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/UList.php#L13)
+
+
+* [MaitavrApi\Request\Users\UList::__construct(array $rows)](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/UList.php#L86) - передать список полей в виде массива в конструктор (ранее заданные поля будут заменены переданными в этот метод)  
+
+* [MaitavrApi\Request\Users\UList::setRows(array $rows=null)](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/UList.php#L96) - задать список полей в виде массива
+
+* [MaitavrApi\Request\Users\UList::addRow($rowName)](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/UList.php#L106) - добавить одно новое поле в ответ
+ 
+
+Фильтрация: 
+
+* [Фильтр, который можно применить к ответу](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/UList.php#L74)
+
+* [MaitavrApi\Request\Users\UList::addFilter($rowName, $value)](https://github.com/snicksnk/maitavr-api/blob/master/src/MaitavrApi/Request/Users/UList.php#L115) - Добавить фильтр
+
+
 Пример использования
 -------------
 ```php
@@ -73,5 +96,9 @@ array(2) {
 }
 */
 ```
+
+
+
+
 [Другие примеры](https://github.com/snicksnk/maitavr-api/blob/master/examples/Request.php)
 
